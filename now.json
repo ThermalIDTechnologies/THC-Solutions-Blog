@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "name": "thc-packaging-and-labeling-requirements",
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    },
+    {
+      "src": "studio/package.json",
+      "use": "@now/static-build",
+      "config":  { "distDir": "public" }
+    }
+  ],
+  "build": {
+    "env": {
+      "MY_SANITY_PROJECT_ID": "dwjuizbv",
+      "MY_SANITY_DATASET": "production",
+      "MY_SANITY_TOKEN": "skYqV3fWCRKAb44dSjrKsVRN2pFeTfTbj75BPtcTWyku4r9lBhrtKovasu1JshfnZ6oeNpWhG83aCBE5Fo0VgBsfwjMvV8hQZuIpKaUsexHHZt4QdTG29QOfG0a4FR5vx2MrpZJfWmYq5PkBYSDg2RR54fw8WreAzy92xkLubF2RspQAKIRl"
+    }
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
+    { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
+    {
+      "src": "/(.*)", "dest": "/web/$1"
+    }
+  ]
+}
