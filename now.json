@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "thc-packaging-and-labeling-requirements",
+  "name": "THC-Solutions-Blog",
   "builds": [
     {
       "src": "web/package.json",
