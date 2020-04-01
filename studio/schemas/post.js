@@ -9,6 +9,22 @@ export default {
       type: "string"
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description: 'Some frontend will require a slug to be set to be able to show the post',
+      options: {
+        source: 'title',
+        maxLength: 96
+      }
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      description: 'You can use this field to schedule post where you show them',
+      type: 'datetime'
+    },
+    {
       title: "Introduction",
       name: "introduction",
       type: "string"
