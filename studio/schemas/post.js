@@ -25,6 +25,12 @@ export default {
       type: 'datetime'
     },
     {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }]
+    },
+    {
       title: "Introduction",
       name: "introduction",
       type: "string"
