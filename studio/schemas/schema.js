@@ -21,6 +21,7 @@ export default createSchema({
     ctaSection,
     quoteSection,
     source,
-    figure
+    figure,
+    category
   ])
 });
