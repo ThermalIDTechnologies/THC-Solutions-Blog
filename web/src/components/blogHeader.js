@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { HeaderContainer } from "./styles/StyledBlogHeader"
 import "typeface-raleway"
 
-const Header = () => (
+const Header = ({ BlogTitle }) => (
   <HeaderContainer
     initial={{ opacity: 0, y: -60 }}
     animate={{ opacity: 1, y: 0 }}
@@ -18,10 +18,13 @@ const Header = () => (
     }}
   >
     <div>
-      <small>
-        <a href="https://thclabelsolutions.com">Home</a> >{" "}
-        <a href="https://www.thclabelsolutions.com/blog">Blog</a> > Blog Post
-      </small>
+      <nav>
+        <small>
+          <a href="https://thclabelsolutions.com">Home</a> >{" "}
+          <a href="https://www.thclabelsolutions.com/blog">Blog</a> >{" "}
+          {BlogTitle}
+        </small>
+      </nav>
       <motion.div
         whileHover={{
           scale: 1.05,

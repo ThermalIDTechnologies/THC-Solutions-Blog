@@ -10,7 +10,7 @@ const fourTwentyBlog = props => {
 
   console.log(post)
   return (
-    <Layout>
+    <Layout BlogTitle={post.title}>
       {errors && <GraphQLErrorList errors={errors} />}
 
       {post && <BlogPost post={post} />}
@@ -21,8 +21,9 @@ const fourTwentyBlog = props => {
 export default fourTwentyBlog
 
 export const query = graphql`
-  query MyQuery {
-    sanityPost(_id: { eq: "1a96f2f6-45f8-4e5f-89dc-b6bcf5f91a85" }) {
+  query BlogPostTemplateQuery($id: String!) {
+    sanityPost(id: { eq: $id }) {
+      id
       title
       introduction
       _rawBody(resolveReferences: { maxDepth: 5 })

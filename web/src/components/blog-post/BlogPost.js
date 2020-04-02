@@ -45,45 +45,49 @@ const BlogPost = ({ post }) => {
       {products.map(product => {
         return <Product key={product.id} product={product} />
       })}
-      <IntroContainer>
+      {ctaSection && (
+        <IntroContainer>
+          <Wrapper>
+            <h4>{ctaSection.ctaDescription}</h4>
+            <ButtonWrapper>
+              <Button
+                bgColor={"#4B7838"}
+                fontColor={"#FFF"}
+                link={ctaSection.ctaButtonUrl}
+              >
+                {ctaSection.ctaButtonText}
+              </Button>
+            </ButtonWrapper>
+          </Wrapper>
+        </IntroContainer>
+      )}
+      {quoteSection && (
         <Wrapper>
-          <h4>{ctaSection.ctaDescription}</h4>
-          <ButtonWrapper>
-            <Button
-              bgColor={"#4B7838"}
-              fontColor={"#FFF"}
-              link={ctaSection.ctaButtonUrl}
-            >
-              {ctaSection.ctaButtonText}
-            </Button>
-          </ButtonWrapper>
+          <QuoteContainer>
+            <LeftQuotationMark>
+              <img
+                src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_100/v1585077397/left-quotation.svg"
+                alt="left quotation marks"
+              />
+            </LeftQuotationMark>
+            <QuoteContent>
+              <blockquote>{quoteSection.quoteText}</blockquote>
+              <p>{quoteSection.quoteAuthor}</p>
+            </QuoteContent>
+            <RightQuotationMark>
+              <img
+                src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_100/v1585077419/right-quotation.svg"
+                alt="right quotation marks"
+              />
+            </RightQuotationMark>
+          </QuoteContainer>
         </Wrapper>
-      </IntroContainer>
-      <Wrapper>
-        <QuoteContainer>
-          <LeftQuotationMark>
-            <img
-              src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_100/v1585077397/left-quotation.svg"
-              alt="left quotation marks"
-            />
-          </LeftQuotationMark>
-          <QuoteContent>
-            <blockquote>{quoteSection.quoteText}</blockquote>
-            <p>{quoteSection.quoteAuthor}</p>
-          </QuoteContent>
-          <RightQuotationMark>
-            <img
-              src="https://res.cloudinary.com/crjars/image/upload/c_scale,f_auto,q_auto:best,w_100/v1585077419/right-quotation.svg"
-              alt="right quotation marks"
-            />
-          </RightQuotationMark>
-        </QuoteContainer>
-      </Wrapper>
-      <SourcesContainer>
-        <Wrapper>
-          <h2>SOURCES</h2>
-          {sources.map(source => {
-            return (
+      )}
+      {sources.map(source => {
+        return (
+          <SourcesContainer>
+            <Wrapper>
+              <h2>SOURCES</h2>
               <p key={source._key}>
                 <a href={source.sourceUrl}>
                   {source.authorAndSource}
@@ -91,10 +95,10 @@ const BlogPost = ({ post }) => {
                   <span>{source.sourceUrl}</span>
                 </a>
               </p>
-            )
-          })}
-        </Wrapper>
-      </SourcesContainer>
+            </Wrapper>
+          </SourcesContainer>
+        )
+      })}
     </>
   )
 }

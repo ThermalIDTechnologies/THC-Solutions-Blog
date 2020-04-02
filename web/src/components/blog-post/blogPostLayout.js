@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../blogHeader"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, BlogTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleForBLogQuery {
       site {
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} style={{ marginBottom: `0`, }} />
+      <Header siteTitle={data.site.siteMetadata.title} BlogTitle={BlogTitle} style={{ marginBottom: `0`, }} />
       <div
         style={{
           margin: `0 auto`,
