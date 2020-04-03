@@ -1,13 +1,21 @@
 import styled, { css } from "styled-components"
 
+export const LayoutContainer = styled.div`
+  margin: 0 auto;
+
+  main {
+    min-height: -moz-calc(100vh - 210px); /* Firefox */
+    min-height: -webkit-calc(100vh -210px); /* Chrome, Safari */
+    min-height: calc(100vh - 210px);
+  }
+`
+
 export const Wrapper = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 
   h2 {
-    /* text-align: center; */
-    /* font-size: 25px; */
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.75px;
@@ -15,16 +23,26 @@ export const Wrapper = styled.div`
 `
 
 export const H1Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: rgba(73, 118, 56, 0.25);
   width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 3rem 2rem;
 
   h1 {
     color: #404041;
+    text-transform: uppercase;
     text-align: center;
-    padding: 6rem 3rem 2rem;
-    margin: 0;
     font-size: 2.75rem;
     font-weight: 700;
+    max-width: 1200px;
+  }
+
+  h5 {
+    font-weight: 600;
+    margin-bottom: 0;
   }
 `
 
@@ -35,9 +53,9 @@ export const IntroContainer = styled.div(
 
     h4 {
       text-indent: 1.5rem;
-      ${"" /* font-size: 1rem; */}
       color: #fff;
       font-weight: 600;
+      margin-bottom: ${props.mBtm};
     }
   `
 )
@@ -177,5 +195,9 @@ export const SourcesContainer = styled.div`
     span {
       word-break: break-all;
     }
+  }
+
+  ${Wrapper} {
+    padding: 0 2rem;
   }
 `

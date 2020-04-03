@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: Raleway, sans-serif;
     font-size: 16px;
     line-height: 1.9;
-    min-height: 100%;
     margin: 0;
     padding: 0;
   }

@@ -4,20 +4,28 @@ import { motion } from "framer-motion"
 export const HeaderContainer = styled(motion.header)`
   background-image: url("https://res.cloudinary.com/crjars/image/upload/f_auto,q_auto:best/v1581975492/Dope-background-image.jpg");
   height: 150px;
-  
 
   div {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
 
-    small {
-      color: #fff;
-      margin-left: 1rem;
+    nav {
+      display: flex;
 
-      a {
+      small {
         color: #fff;
-        text-decoration: none;
+        margin: 0.5rem 1rem;
+        flex: 1;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
 

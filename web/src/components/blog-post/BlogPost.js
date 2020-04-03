@@ -1,4 +1,5 @@
 import React from "react"
+import { format, distanceInWords, differenceInDays } from "date-fns"
 import {
   Wrapper,
   H1Wrapper,
@@ -18,6 +19,8 @@ import SEO from "../seo"
 
 const BlogPost = ({ post }) => {
   const {
+    publishedAt,
+    categories,
     title,
     introduction,
     _rawBody,
@@ -33,8 +36,20 @@ const BlogPost = ({ post }) => {
       <SEO title={title} description={introduction} />
       <H1Wrapper>
         <h1>{title}</h1>
+        {publishedAt && (
+          <h5>
+            Posted on: {differenceInDays(new Date(publishedAt), new Date()) > 3
+              ? distanceInWords(new Date(publishedAt), new Date())
+              : format(new Date(publishedAt), "MMMM DD YYYY")}
+          </h5>
+        )}
+        <h5>
+        Posted in: {categories.map(category => {
+          return <span key={category._id}>{category.title}</span>
+        })}
+        </h5>
       </H1Wrapper>
-      <IntroContainer>
+      <IntroContainer mBtm={0}>
         <Wrapper>
           <h4>{introduction}</h4>
         </Wrapper>
@@ -83,11 +98,11 @@ const BlogPost = ({ post }) => {
           </QuoteContainer>
         </Wrapper>
       )}
-      {sources.map(source => {
-        return (
-          <SourcesContainer>
+      <SourcesContainer>
+        {sources.length > 0 && <h2>SOURCES</h2>}
+        {sources.map(source => {
+          return (
             <Wrapper>
-              <h2>SOURCES</h2>
               <p key={source._key}>
                 <a href={source.sourceUrl}>
                   {source.authorAndSource}
@@ -96,9 +111,9 @@ const BlogPost = ({ post }) => {
                 </a>
               </p>
             </Wrapper>
-          </SourcesContainer>
-        )
-      })}
+          )
+        })}
+      </SourcesContainer>
     </>
   )
 }

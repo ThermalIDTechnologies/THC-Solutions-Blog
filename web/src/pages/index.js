@@ -1,21 +1,63 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from 'gatsby'
+import { mapEdgesToNodes } from '../lib/helpers'
+import GraphQLErrorList from '../components/graphql-error-list'
+import { H1Wrapper,  Wrapper } from "../components/styles/StyledBlogPost"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+
+export const query = graphql`
+  query BlogPageQuery {
+    posts: allSanityPost(limit: 12, sort: { fields: [publishedAt], order: DESC }) {
+      edges {
+        node {
+          id
+          publishedAt
+          blogIndexImage {
+            asset {
+              fluid(maxWidth: 768) {
+              ...GatsbySanityImageFluid
+              }
+            }
+          }
+            alt
+          }
+          title
+          _rawExcerpt
+          slug {
+            current
+          }
+        }
+      }
+    }
+`
+
+const IndexPage = props => {
+  const { data, errors } = props
+
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    )
+  }
+
+  const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
+
+  return (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Blog" />
+    <H1Wrapper>
+      <h1>Blog</h1>
+    </H1Wrapper>
+    <Wrapper>
+
+    </Wrapper>
   </Layout>
-)
+)}
 
 export default IndexPage

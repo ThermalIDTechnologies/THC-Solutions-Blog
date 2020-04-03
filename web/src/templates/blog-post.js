@@ -24,6 +24,11 @@ export const query = graphql`
   query BlogPostTemplateQuery($id: String!) {
     sanityPost(id: { eq: $id }) {
       id
+      publishedAt
+      categories {
+        _id
+        title
+      }
       title
       introduction
       _rawBody(resolveReferences: { maxDepth: 5 })
