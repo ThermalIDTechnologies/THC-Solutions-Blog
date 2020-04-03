@@ -1,13 +1,12 @@
 import React from "react"
-import { graphql } from 'gatsby'
-import { mapEdgesToNodes } from '../lib/helpers'
-import GraphQLErrorList from '../components/graphql-error-list'
-import { H1Wrapper,  Wrapper } from "../components/styles/StyledBlogPost"
+import { graphql } from "gatsby"
+import { mapEdgesToNodes } from "../lib/helpers"
+import GraphQLErrorList from "../components/graphqlErrorList"
+import { H1Wrapper, Wrapper } from "../components/styles/StyledBlogPost"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-
 
 export const query = graphql`
   query BlogPageQuery {
@@ -16,23 +15,22 @@ export const query = graphql`
         node {
           id
           publishedAt
-          blogIndexImage {
-            asset {
-              fluid(maxWidth: 768) {
-              ...GatsbySanityImageFluid
-              }
-            }
-          }
-            alt
-          }
+          # blogIndexImage {
+          #   asset {
+          #     fluid(maxWidth: 768) {
+          #     ...GatsbySanityImageFluid
+          #     }
+          #   }
+          #   alt
+          # }
           title
-          _rawExcerpt
           slug {
             current
           }
         }
       }
     }
+  }
 `
 
 const IndexPage = props => {
@@ -49,15 +47,14 @@ const IndexPage = props => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-  <Layout>
-    <SEO title="Blog" />
-    <H1Wrapper>
-      <h1>Blog</h1>
-    </H1Wrapper>
-    <Wrapper>
-
-    </Wrapper>
-  </Layout>
-)}
+    <Layout>
+      <SEO title="Blog" />
+      <H1Wrapper>
+        <h1>Blog</h1>
+      </H1Wrapper>
+      <Wrapper></Wrapper>
+    </Layout>
+  )
+}
 
 export default IndexPage

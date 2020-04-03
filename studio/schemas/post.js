@@ -25,6 +25,11 @@ export default {
       type: 'datetime'
     },
     {
+      name: 'blogIndexImage',
+      title: 'Blog Index image',
+      type: 'blogIndexImage'
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
