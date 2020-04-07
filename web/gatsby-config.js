@@ -42,6 +42,32 @@ module.exports = {
         watchMode: `true`,
       },
     },
+    {
+      resolve: `gatsby-plugin-apollo`,
+      options: {
+        uri: `https://api.monday.com/v2/`,
+        headers: {
+          Authorization: `${process.env.MONDAY_API_TOKEN}`,
+        },
+      },
+    },
+    {
+      resolve: "gatsby-transformer-cloudinary",
+      options: {
+        cloudName: "crjars",
+        apiKey: `${process.env.CLOUDINARY_API_KEY}`,
+        apiSecret: `${process.env.CLOUDINARY_API_SECRET}`,
+
+        // This folder will be created if it doesn’t exist.
+        uploadFolder: "gatsby-cloudinary",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-83589888-1",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
