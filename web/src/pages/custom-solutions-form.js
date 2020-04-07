@@ -7,7 +7,7 @@ import MondayForm from "./../components/MondayForm"
 const CustomSolutionsForm = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Custom Solutions Form" description="Fill out the form to receive information about our A-Z custom solutions for your business."/>
       <MondayForm />
     </Layout>
   )
