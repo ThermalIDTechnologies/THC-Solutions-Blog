@@ -69,7 +69,7 @@ export const BodyContainer = styled.div`
     text-align: center;
   }
 
-  p {
+  p:first-of-type {
     text-indent: 1.5rem;
   }
 

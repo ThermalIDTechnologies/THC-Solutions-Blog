@@ -2,6 +2,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { motion } from "framer-motion"
+import { Link } from "gatsby"
 
 import { HeaderContainer } from "./styles/StyledBlogHeader"
 import "typeface-raleway"
@@ -21,7 +22,7 @@ const Header = ({ BlogTitle }) => (
       <nav>
         <small>
           <a href="https://thclabelsolutions.com">Home</a> >{" "}
-          <a href="https://www.thclabelsolutions.com/blog">Blog</a> >{" "}
+          <Link to="/">Blog</Link> >{" "}
           {BlogTitle}
         </small>
       </nav>

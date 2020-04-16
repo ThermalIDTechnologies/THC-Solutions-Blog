@@ -13,6 +13,6 @@ export const Btn = styled.a(
     box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.6);
     font-weight: 500;
     width: 12.5rem;
-    ${'' /* margin: 0 auto; */}
+    ${"" /* margin: 0 auto; */}
   `
 )
