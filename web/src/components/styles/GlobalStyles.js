@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     font-family: Raleway, sans-serif;
     line-height: 1.9;
+    font-size: 105%;
   }
 
   td {
