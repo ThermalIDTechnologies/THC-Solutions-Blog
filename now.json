@@ -12,7 +12,7 @@
       "use": "@now/static-build",
       "config": { "distDir": "public" }
     },
-    { "src": "web/api/instagram.js", "use": "@now/node-server" }
+    { "src": "web/api/instagram.js", "use": "@now/node" }
   ],
   "build": {
     "env": {
@@ -31,6 +31,10 @@
     {
       "src": "/(.*)",
       "dest": "/web/$1"
+    },
+    {
+      "src": "/api/instagram",
+      "dest": "/web/api/instagram.js"
     }
   ]
 }
