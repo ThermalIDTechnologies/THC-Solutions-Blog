@@ -37,9 +37,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h4,
-    h5,
-    h6 {
+    h5 {
       font-size: 105%;
+    }
+
+    h6 {
+      font-size: 90%;
     }
     
     td {

@@ -1,14 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { mapEdgesToNodes } from "../lib/helpers"
 import GraphQLErrorList from "../components/graphqlErrorList"
 import { H1Wrapper, Wrapper } from "../components/styles/StyledBlogPost"
 import {
   BlogPostIndexContainer,
   BlogPostPreviewContainer,
-  AsideWrapper,
-  PaginationWrapper,
-  LatestPostLink,
+  IgWrapper,
 } from "../components/styles/StyledBlogPostPreview"
 
 import Layout from "../components/layout"
@@ -18,9 +16,10 @@ import Pagination from "./../components/Pagination"
 import Instagram from "./../components/Instagram"
 
 export const query = graphql`
-  query BlogPageQuery($skip: Int! = 0) {
+  query CategoryQuery($skip: Int!, $category: String) {
     posts: allSanityPost(
       sort: { fields: [publishedAt], order: DESC }
+      filter: {categories: {elemMatch: {title: {in: [$category]}}}}
       limit: 10
       skip: $skip
     ) {
@@ -38,6 +37,9 @@ export const query = graphql`
             alt
           }
           title
+          categories {
+            title
+          }
           slug {
             current
           }
@@ -68,9 +70,9 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO title="THC Solutions Blog" />
+      <SEO title={pageContext.category} />
       <H1Wrapper>
-        <h1>THC Solutions Blog</h1>
+        <h1>{pageContext.category}</h1>
       </H1Wrapper>
       <Wrapper>
         <Pagination
@@ -83,22 +85,14 @@ const IndexPage = props => {
               return <BlogPostPreview key={postNode.id} nodes={postNode} />
             })}
           </BlogPostPreviewContainer>
-          <AsideWrapper>
-            <h4>Latest Blogs:</h4>
-            {postNodes.slice(0, 6).map(latestPost => {
-              return <LatestPostLink to={`/${latestPost.slug.current}`}>
-                <h6>{latestPost.title}</h6>
-              </LatestPostLink>
-            })}
+          <IgWrapper>
             <Instagram />
-          </AsideWrapper>
-          <PaginationWrapper>
-            <Pagination
-              currentPage={pageContext.currentPage}
-              totalCount={data.posts.totalCount}
-            />
-          </PaginationWrapper>
+          </IgWrapper>
         </BlogPostIndexContainer>
+        <Pagination
+          currentPage={pageContext.currentPage}
+          totalCount={data.posts.totalCount}
+        />
       </Wrapper>
     </Layout>
   )

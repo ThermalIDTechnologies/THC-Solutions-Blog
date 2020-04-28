@@ -38,7 +38,12 @@ const PaginationStyles = styled.div`
   a[disabled] {
     opacity: 0;
     pointer-events: none;
-    /* text-decoration: line-through; */
+    height: 0;
+    padding: 0;
+
+    em {
+      height: 0;
+    }
   }
 `
 
@@ -53,7 +58,7 @@ const Pagination = ({ currentPage = 1, totalCount }) => {
         disabled={prevPage <= 0 ? true : null}
         to={`${prevPage}`}
       >
-        <em>← Prev 10</em>
+        <em>← Prev Page</em>
       </Link>
       <p>
         Page {currentPage} of {totalPages}
@@ -62,7 +67,7 @@ const Pagination = ({ currentPage = 1, totalCount }) => {
         disabled={nextPage > totalPages ? true : null}
         to={nextPage > totalPages ? null : `${nextPage}`}
       >
-        <em>{nextPage > totalPages ? `No more pages` : `10 More →`}</em>
+        <em>{nextPage > totalPages ? `No more pages` : `Next Page →`}</em>
       </Link>
     </PaginationStyles>
   )

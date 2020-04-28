@@ -6,18 +6,19 @@ import { format, distanceInWords, differenceInDays } from "date-fns"
 import {
   StyledBlogPostPreview,
   StyledPreviewImage,
+  ReadMoreLink,
 } from "./styles/StyledBlogPostPreview"
 
 const BlogPostPreview = ({ nodes }) => {
   return (
     <StyledBlogPostPreview>
       <Link to={`/${nodes.slug.current}`}>
+        <h2>{nodes.title}</h2>
         {nodes.blogIndexImage && (
           <StyledPreviewImage>
             <Image fluid={nodes.blogIndexImage.asset.fluid} alt={nodes.title} />
           </StyledPreviewImage>
         )}
-        <h2>{nodes.title}</h2>
         {nodes.publishedAt && (
           <small>
             Posted on:{" "}
@@ -27,6 +28,7 @@ const BlogPostPreview = ({ nodes }) => {
           </small>
         )}
         {nodes.introduction && <p>{nodes.introduction}</p>}
+        {/* <ReadMoreLink>Read More</ReadMoreLink> */}
       </Link>
     </StyledBlogPostPreview>
   )
