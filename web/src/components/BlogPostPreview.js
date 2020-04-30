@@ -6,7 +6,6 @@ import { format, distanceInWords, differenceInDays } from "date-fns"
 import {
   StyledBlogPostPreview,
   StyledPreviewImage,
-  ReadMoreLink,
 } from "./styles/StyledBlogPostPreview"
 
 const BlogPostPreview = ({ nodes }) => {
@@ -28,7 +27,6 @@ const BlogPostPreview = ({ nodes }) => {
           </small>
         )}
         {nodes.introduction && <p>{nodes.introduction}</p>}
-        {/* <ReadMoreLink>Read More</ReadMoreLink> */}
       </Link>
     </StyledBlogPostPreview>
   )
