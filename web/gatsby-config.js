@@ -7,6 +7,7 @@ module.exports = {
     title: `THC Solutions Blog`,
     description: `Find information on everything Cannabis through our blog!`,
     author: `@`,
+    siteUrl: `https://blog.thclabelsolutions.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -68,6 +69,7 @@ module.exports = {
         trackingId: "UA-83589888-1",
       },
     },
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
