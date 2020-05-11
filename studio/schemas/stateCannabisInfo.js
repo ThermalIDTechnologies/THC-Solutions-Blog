@@ -8,14 +8,14 @@ export default {
       name: "state",
       description: "Full state name.",
       type: "string",
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Id",
       name: "id",
       description: "State abbreviation ex: Ca for California.",
       type: "string",
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Recreational Status",
@@ -24,12 +24,12 @@ export default {
       type: "string",
       options: {
         list: [
-          {title: 'Yes', value: 'Yes'},
-          {title: 'No', value: 'No'},
+          { title: "Yes", value: "Yes" },
+          { title: "No", value: "No" },
         ], // <-- predefined values
-        layout: 'dropdown' // <-- defaults to 'dropdown'
+        layout: "dropdown", // <-- defaults to 'dropdown'
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Medical Status",
@@ -38,12 +38,12 @@ export default {
       type: "string",
       options: {
         list: [
-          {title: 'Yes', value: 'Yes'},
-          {title: 'No', value: 'No'},
+          { title: "Yes", value: "Yes" },
+          { title: "No", value: "No" },
         ], // <-- predefined values
-        layout: 'dropdown' // <-- defaults to 'dropdown'
+        layout: "dropdown", // <-- defaults to 'dropdown'
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "CBD Status",
@@ -52,12 +52,12 @@ export default {
       type: "string",
       options: {
         list: [
-          {title: 'Yes', value: 'Yes'},
-          {title: 'No', value: 'No'},
+          { title: "Yes", value: "Yes" },
+          { title: "No", value: "No" },
         ], // <-- predefined values
-        layout: 'dropdown' // <-- defaults to 'dropdown'
+        layout: "dropdown", // <-- defaults to 'dropdown'
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       title: "Color",
@@ -66,15 +66,37 @@ export default {
       type: "string",
       options: {
         list: [
-          {title: 'Medical', value: '#97d700'},
-          {title: 'Recreational', value: '#4a7729'},
-          {title: 'CBD', value: '#fcd299'},
-          {title: 'None', value: '#D3D3D3'},
+          { title: "Medical", value: "#97d700" },
+          { title: "Recreational", value: "#4a7729" },
+          { title: "CBD", value: "#fcd299" },
+          { title: "None", value: "#D3D3D3" },
         ], // <-- predefined values
-        layout: 'dropdown' // <-- defaults to 'dropdown'
+        layout: "dropdown", // <-- defaults to 'dropdown'
       },
-      validation: Rule => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
-
-  ]
-}
+    {
+      title: "State PDF's",
+      name: "statePdfs",
+      type: "array",
+      of: [
+        {
+          title: "Tiltle and PDF",
+          type: "object",
+          fields: [
+            {
+              title: "Title",
+              name: "title",
+              type: "string",
+            },
+            {
+              title: "PDF",
+              name: "pdf",
+              type: "file",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
