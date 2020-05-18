@@ -10,6 +10,8 @@ import figure from "./figure";
 import category from "./category"
 import blogIndexImage from "./blogIndexImage"
 import titleAndPdf from "./titleAndPdf"
+import instaLink from "./instaLink";
+import productLink from "./productLink";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,6 +29,8 @@ export default createSchema({
     figure,
     category,
     blogIndexImage,
-    titleAndPdf
+    titleAndPdf,
+    instaLink,
+    productLink,
   ])
 });
