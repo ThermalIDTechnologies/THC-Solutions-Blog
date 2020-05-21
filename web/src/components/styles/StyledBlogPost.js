@@ -73,6 +73,12 @@ export const BodyContainer = styled.div`
     text-indent: 1.5rem;
   }
 
+  a {
+    text-decoration: none;
+    color: #4a7729;
+    font-weight: 600;
+  }
+
   figure {
     margin-right: 0;
     margin-left: 0;
@@ -90,6 +96,10 @@ export const ProductContainer = styled.div(
   props => css`
     background-color: ${props.bgColor};
     color: #414042;
+
+    h2 {
+      padding-top: 1rem;
+    }
 
     p {
       em {

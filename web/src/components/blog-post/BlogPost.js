@@ -38,16 +38,20 @@ const BlogPost = ({ post }) => {
         <h1>{title}</h1>
         {publishedAt && (
           <h5>
-            Posted on: {differenceInDays(new Date(publishedAt), new Date()) > 3
+            Posted on:{" "}
+            {differenceInDays(new Date(publishedAt), new Date()) > 3
               ? distanceInWords(new Date(publishedAt), new Date())
               : format(new Date(publishedAt), "MMMM DD YYYY")}
           </h5>
         )}
-        <h5>
-        Posted in: {categories.map(category => {
-          return <span key={category._id}>{category.title}</span>
-        })}
-        </h5>
+        {categories[0] && (
+          <h5>
+            Posted in:{" "}
+            {categories.map(category => {
+              return <span key={category._id}>{category.title}</span>
+            })}
+          </h5>
+        )}
       </H1Wrapper>
       <IntroContainer mBtm={0}>
         <Wrapper>

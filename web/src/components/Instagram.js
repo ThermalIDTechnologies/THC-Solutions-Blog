@@ -6,7 +6,7 @@ const Instagram = () => {
   const instas = useInstagram()
   return (
     <div>
-      <h4>Latest IG Posts:</h4>
+      <h4>Latest Instagram Posts:</h4>
       <InstaContainer>
         {instas.map(ig => (
           <a href={ig.url} key={ig.id}>
