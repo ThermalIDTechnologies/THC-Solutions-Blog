@@ -16,7 +16,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/color-input",
-    "asset-source-cloudinary"
+    "asset-source-cloudinary",
+    "dashboard-widget-deploy-vercel"
   ],
   "env": {
     "development": {

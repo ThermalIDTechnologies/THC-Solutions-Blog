@@ -8,6 +8,9 @@ export default {
     },
     {
       name: 'project-users'
+    },
+    {
+      name: 'deploy-vercel'
     }
   ]
 }
