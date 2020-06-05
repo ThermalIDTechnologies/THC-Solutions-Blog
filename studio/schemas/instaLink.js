@@ -2,8 +2,7 @@ export default {
   name: "instaLink",
   type: "document",
   fields: [
-    { name: "ogImage", type: "string" },
-    { name: "thumbnail", type: "string" },
+    { name: "thumbnail", type: "image" },
     { name: "postUrl", type: "string" },
     { name: "caption", type: "string" },
     { name: "timestamp", type: "datetime" },
