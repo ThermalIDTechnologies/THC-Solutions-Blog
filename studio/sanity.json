@@ -17,7 +17,9 @@
     "@sanity/desk-tool",
     "@sanity/color-input",
     "asset-source-cloudinary",
-    "dashboard-widget-deploy-vercel"
+    "dashboard-widget-deploy-vercel",
+    "import-insta-links",
+    "dashboard-widget-netlify"
   ],
   "env": {
     "development": {

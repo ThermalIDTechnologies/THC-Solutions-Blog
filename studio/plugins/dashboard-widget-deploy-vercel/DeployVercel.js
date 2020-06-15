@@ -56,7 +56,7 @@ const DeployVercel = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h2>Deploy to Vercel</h2>
+        <h2>Deploy Blog to Vercel</h2>
       </header>
       <button className={styles.button} type='button' onClick={deploy} disabled={deploying}>
         {deploying ? 'Deploying...' : 'Deploy'}
