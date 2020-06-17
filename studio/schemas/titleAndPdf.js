@@ -13,5 +13,10 @@ export default {
       name: "pdf",
       type: "file",
     },
+    {
+      title: "UTM URL",
+      name: "utm_url",
+      type: "url",
+    },
   ],
 };
