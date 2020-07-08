@@ -1,3 +1,5 @@
+import smallFigure from "./smallFigure";
+
 export default {
   type: "document",
   title: "Blog post",
@@ -61,7 +63,9 @@ export default {
             {title: 'Quote', value: 'blockquote'},
           ]
         }, 
-        { type: "figure" }
+        { type: "smallFigure" },
+        { type: "mediumFigure" },
+        { type: "figure" },
       ]
     },
     {
