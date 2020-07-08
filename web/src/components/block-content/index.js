@@ -1,6 +1,8 @@
 import BaseBlockContent from "@sanity/block-content-to-react"
 import React from "react"
 import Figure from "./Figure"
+import SmallFigure from "./SmallFigure"
+import MediumFigure from "./MediumFigure"
 import sanityConfig from "./../../sanity/config"
 
 const serializers = {
@@ -42,6 +44,8 @@ const serializers = {
       }
     },
     figure: Figure,
+    smallFigure: SmallFigure,
+    mediumFigure: MediumFigure,
   },
 }
 

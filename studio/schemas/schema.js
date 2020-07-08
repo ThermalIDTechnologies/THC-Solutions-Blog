@@ -27,6 +27,8 @@ export default createSchema({
     quoteSection,
     source,
     figure,
+    smallFigure,
+    mediumFigure,
     category,
     blogIndexImage,
     titleAndPdf,
