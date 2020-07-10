@@ -7,8 +7,8 @@ import ctaSection from "./ctaSection";
 import quoteSection from "./quoteSection";
 import source from "./source";
 import figure from "./figure";
-import smallFigure from "./smallFigure"
-import mediumFigure from "./mediumFigure"
+// import smallFigure from "./smallFigure"
+// import mediumFigure from "./mediumFigure"
 import category from "./category"
 import blogIndexImage from "./blogIndexImage"
 import titleAndPdf from "./titleAndPdf"
@@ -29,8 +29,8 @@ export default createSchema({
     quoteSection,
     source,
     figure,
-    smallFigure,
-    mediumFigure,
+    // smallFigure,
+    // mediumFigure,
     category,
     blogIndexImage,
     titleAndPdf,

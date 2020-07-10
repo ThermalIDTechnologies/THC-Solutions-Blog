@@ -6,7 +6,7 @@ import sanityConfig from './../../sanity/config';
 const Figure = ({ node }) => {
   const fluid = getFluidGatsbyImage(
     node.asset._id,
-    { maxWidth: 1072 },
+    { maxWidth: node.imageWidth },
     sanityConfig
   )
 
@@ -18,7 +18,7 @@ const Figure = ({ node }) => {
   )
 
   return (
-    <figure>
+    <figure style={{ maxWidth: `${node.imageWidth}px`, margin: `1rem auto` }}>
       {image}
       {node.caption && (
         <figcaption dangerouslySetInnerHTML={{ __html: node.caption }} />

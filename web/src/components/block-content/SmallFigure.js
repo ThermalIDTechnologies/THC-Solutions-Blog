@@ -18,7 +18,7 @@ const Figure = ({ node }) => {
   )
 
   return (
-    <figure>
+    <figure style={{ maxWidth: `564px`, margin: `0 auto` }}>
       {image}
       {node.caption && (
         <figcaption dangerouslySetInnerHTML={{ __html: node.caption }} />

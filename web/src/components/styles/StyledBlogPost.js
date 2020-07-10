@@ -125,7 +125,11 @@ export const ProductContainer = styled.div(
 
 export const ImageContainer = styled.div``
 
-export const ProductContentContainer = styled.div``
+export const ProductContentContainer = styled.div`
+  h2 {
+    text-align: center;
+  }
+`
 
 export const ButtonWrapper = styled.div`
   display: flex;

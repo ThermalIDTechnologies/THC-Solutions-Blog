@@ -1,6 +1,6 @@
 export default {
   name: 'figure',
-  title: 'Large Figure',
+  title: 'Figure',
   type: 'image',
   options: {
     hotspot: true
@@ -11,8 +11,9 @@ export default {
       title: 'Alternative text (for screen readers)',
       type: 'string',
       options: {
-        isHighlighted: true
-      }
+        isHighlighted: true,
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'caption',
@@ -21,6 +22,23 @@ export default {
       options: {
         isHighlighted: true
       }
-    }
+    },
+    {
+      name: "imageWidth",
+      title: "Image Width",
+      description: "Set maximum widths (using pixels) of images",
+      type: "string",
+      options: {
+        isHighlighted: true,
+        list: [
+          { title: "Xtra Small (376px Width)", value: "376" },
+          { title: "Small (564px Width)", value: "564" },
+          { title: "Medium (846px Width)", value: "846" },
+          { title: "Large (1072px Width)", value: "1072" },
+        ], // <-- predefined values
+        layout: "dropdown", // <-- defaults to 'dropdown'
+      },
+      validation: (Rule) => Rule.required(),
+    },
   ]
 }

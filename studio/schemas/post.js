@@ -1,4 +1,3 @@
-import smallFigure from "./smallFigure";
 
 export default {
   type: "document",
@@ -63,8 +62,6 @@ export default {
             {title: 'Quote', value: 'blockquote'},
           ]
         }, 
-        { type: "smallFigure" },
-        { type: "mediumFigure" },
         { type: "figure" },
       ]
     },
